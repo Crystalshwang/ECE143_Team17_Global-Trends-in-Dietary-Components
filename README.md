@@ -11,5 +11,5 @@ All of data(files) we used are in the 'data' directory.
 1. Data: all our csv files
 2. final_code_file.ipynb: final code in ipynb. format
 3. final_code.py: our final py. file. 
-4. global_trends.pptx: slides
-5. text.html: our annimation visualization based on pyecharts
+4. global_trends.pptx: representation slides
+5. text.html: our annimation visualization based on pyecharts(could be downloaded and display in browsers)
