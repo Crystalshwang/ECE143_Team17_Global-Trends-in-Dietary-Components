@@ -5,7 +5,7 @@ This is the final project for team 17 in ECE143, UCSD. We mainly focus on the gl
 FAOSTAT: http://www.fao.org/faostat/en/?#data
 
 ## Files
-### Data
+### data
 This folder contains all the data we use.
 
 ### generated charts
