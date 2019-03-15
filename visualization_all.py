@@ -102,14 +102,19 @@ class Visualization:
         plt.savefig('box2.pdf',bbox_inches='tight')
         plt.show()
     
-    def lineChart_for_fruit_vegetable_meat_intake(self):
+    def lineChart_for_fruit_vegetable_meat_intake(self, files):
         '''
         Plot a line chart to compare the value of fruit/vegetable/meat intake(kg/capita/yr) 
         from 1961 to 2013 of four countries
+        param: files --> list of items you want to plot
+        type: list
         '''
-        countries = ['India','Russia', 'China','United States']
+        # make sure 'files' is the correct data type and only contains strings 
+        assert isinstance(files, list)
+        assert all(isinstance(item, str) for item in files)
+
+        countries = ['India', 'Russia', 'China', 'United States']
         plt.rcParams["figure.figsize"] = [8, 4.8]
-        files = ['fruit', 'vegetable', 'meat']
         year = []
         
         # set xticks
@@ -125,9 +130,11 @@ class Visualization:
                 col_name = ' (kilograms per person)'
                 df = self.fruit
             elif i=='vegetable':
+                print(i)
                 col_name = 'Food Balance Sheets: Vegetables - Food supply quantity (kg/capita/yr) (FAO (2017)) (kg)'
                 df = self.vegetable
             else:
+                print(i)
                 col_name = 'Value'
                 df = self.meat
             
@@ -199,6 +206,9 @@ class Visualization:
         param: zero_center --> whether to center all graph at the origion
         type: boolean
         '''
+        # assert start_zero is the correct datatype
+        assert isinstance(start_zero, bool)
+
         # select useful data
         df = self.food[['Item','Year','Value']]
         
@@ -273,7 +283,7 @@ class Visualization:
         plt.plot(year, seafood_value, color='blue',alpha=opacity, label='Seafood')
         plt.plot(year, fruit_value, color='orange', label='Fruit')
         plt.plot(year, carb_value, color='purple', alpha=opacity, label='Carbohydrate')
-        
+        # set legend and axis
         plt.legend(bbox_to_anchor=(1.04,1), loc="upper left", frameon=False)
         plt.xlabel('Year')
         plt.ylabel('Consumption (millon tons)')
@@ -317,7 +327,6 @@ class Visualization:
         f2.close()
         myzip2.close()
         
-        
     def generate_map(self,style):
         '''
         Generate the corresponding world map according to the data we have
@@ -325,6 +334,10 @@ class Visualization:
         param: style --> output of style function
         ouput: save 'distribution.html' in the same folder
         '''
+        # make sure input style is the right type: pyecharts.Style
+        assert isinstance(style, pyecharts.Style)
+
+        # set up countries map
         countries=np.ndarray.flatten(np.array(self.df_crops[:,1]).astype(np.str)).tolist()
         countries=set(countries)
         veg_con=[]
@@ -378,9 +391,12 @@ class Visualization:
         '''
         Generate the corresponding pie charts
         param: country --> the country we want to use in the dataset
-        type: list
+        type: str
         output: save the pie chart as 'country.html' in this folder
         '''
+        # make sure country is a string
+        assert isinstance(country, str)
+
         # extract the data we need
         attr1=np.ndarray.flatten(np.array(self.df_crops[:,3]).astype(np.str)).tolist()
         attr1=set(attr1)
