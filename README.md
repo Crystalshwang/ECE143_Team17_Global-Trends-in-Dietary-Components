@@ -20,6 +20,6 @@ FAOSTAT: http://www.fao.org/faostat/en/?#data
   * `conda install seaborn`
 * pyecharts
   * `pip install pyecharts`
-  * `pip install echarts-countries-pypkg
+  * `pip install echarts-countries-pypkg`
 * pyecharts_snapshot
   * `pip install pyecharts-snapshot`
