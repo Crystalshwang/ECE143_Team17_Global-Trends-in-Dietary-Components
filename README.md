@@ -25,8 +25,7 @@ Our proposal file.
 * matplotlib
 * pandas
 * seaborn
-  * `pip install seaborn`
-  * `conda install seaborn`
+  * `pip install seaborn` or `conda install seaborn`
 * pyecharts
   * `pip install pyecharts`
   * `pip install echarts-countries-pypkg`
