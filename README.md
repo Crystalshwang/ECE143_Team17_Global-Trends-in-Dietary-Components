@@ -6,7 +6,7 @@ FAOSTAT: http://www.fao.org/faostat/en/?#data
 
 ## Files
 1. Data: all our csv files
-2. final_code_file.ipynb: final code in ipynb. format
+2. final_code.ipynb: final code in ipynb. format
 3. final_code.py: our final py. file. 
 4. presentation.pdf: representation slides
 5. generated charts: our annimation visualization based on pyecharts(could be downloaded and display in browsers)
