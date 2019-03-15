@@ -1,2 +1,5 @@
 # Global-Trends-in-Dietary-Components
 This is the final project for team 17 in ECE143, UCSD. We mainly focus on the global trends of the real world diet components.
+
+## data source
+FAOSTAT: http://www.fao.org/faostat/en/?#data/BL
