@@ -5,11 +5,20 @@ This is the final project for team 17 in ECE143, UCSD. We mainly focus on the gl
 FAOSTAT: http://www.fao.org/faostat/en/?#data
 
 ## Files
-1. Data: all our csv files
-2. final_code.ipynb: final code in ipynb. format
-3. final_code.py: our final py. file. 
-4. presentation.pdf: representation slides
-5. generated charts: our annimation visualization based on pyecharts(could be downloaded and display in browsers)
+### Data
+This folder contain all the data we use.
+
+### visualization_all.py
+This file inclues the class `Visualization` and all functions for plotting.
+
+### final_code.ipynb
+This is the jupyter notebook file that execultea all funcions in visualization_all.py and plots all graphs.
+
+### presentation.pdf
+Our presentation slides.
+
+### proposal.pdf
+Our proposal file.
 
 ## Libraries:
 * numpy
