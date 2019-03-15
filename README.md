@@ -11,14 +11,14 @@ FAOSTAT: http://www.fao.org/faostat/en/?#data
 4. global_trends.pptx: representation slides
 5. text.html: our annimation visualization based on pyecharts(could be downloaded and display in browsers)
 
-## Libraries used:
+## Libraries:
 * numpy
 * matplotlib
 * pandas
 * seaborn
-  * pip install seaborn
-  * conda install seaborn
+  * `pip install seaborn`
+  * `conda install seaborn`
 * pyecharts
-  * pip install pyecharts
+  * `pip install pyecharts`
 * pyecharts_snapshot
-  * pip install pyecharts-snapshot
+  * `pip install pyecharts-snapshot`
