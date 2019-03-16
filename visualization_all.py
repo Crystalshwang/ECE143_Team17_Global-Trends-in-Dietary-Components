@@ -16,7 +16,7 @@ from pyecharts_snapshot.main import make_a_snapshot
 
 class Visualization:
     '''
-    Creat Visualization object that contains all the data we need
+    Create  Visualization object that contains all the data we need
     Define functions that can graph various plots
     '''
     def __init__(self):
@@ -55,7 +55,7 @@ class Visualization:
         theta = np.concatenate((theta,[theta[0]]))
         value = np.concatenate((value,[value[0]]))
         
-        # grpah the plot
+        # graph  the plot
         ax = plt.subplot(111,projection = 'polar')      
         ax.plot(theta,value,lw=1,alpha = 0.75,color=self._color)   
         ax.fill(theta,value,color='firebrick',alpha = self._transparency)       
@@ -117,7 +117,7 @@ class Visualization:
         plt.rcParams["figure.figsize"] = [8, 4.8]
         year = []
         
-        # set xticks
+        # set x-axis
         for i in range(1961,2014,10):
             year.append(i)
         
@@ -201,10 +201,10 @@ class Visualization:
     
     def lineChart_food_consumption(self, start_zero=False):
         '''
-        Graph the global food consumpiton trend in 4 major categories:
+        Graph the global food consumption  trend in 4 major categories:
         Carbs, Vegetable, Fruit, Meat, Seafood
-        param: zero_center --> whether to center all graph at the origion
-        type: boolean
+        param: start_zero --> whether to center all graph at the origin
+        type: bool
         '''
         # assert start_zero is the correct datatype
         assert isinstance(start_zero, bool)
@@ -212,7 +212,7 @@ class Visualization:
         # select useful data
         df = self.food[['Item','Year','Value']]
         
-        # combine data in creal and starchy roots
+        # combine data in cereal  and starchy roots
         df_cereal = df.loc[df['Item'] == 'Cereals - Excluding Beer']
         df_starchy = df.loc[(df['Item'] == 'Starchy Roots')]
         
@@ -220,10 +220,10 @@ class Visualization:
         df_cereal.index = range(len(df_cereal))
         df_starchy.index = range(len(df_starchy))
 
-        # add value together, crearing carb value
+        # add value together, creating carb value
         carb_value = df_cereal['Value'] + df_starchy['Value']
      
-        # Extract data for ploting: vagetable, fruit, meant, carbs
+        # Extract data for plotting: vegetable, fruit, meant, carbs
         df_veg = df.loc[df['Item'] == 'Vegetables']
         df_meat = df.loc[df['Item'] == 'Meat']
         df_seafood = df.loc[df['Item'] == 'Fish, Seafood']
@@ -237,11 +237,11 @@ class Visualization:
             param: data --> DataFrame you input
             return: list of all values from 1961 to 2013
             '''
-            # creat year list
+            # create  year list
             year_list = list(range(1961,2014))
             value = []
             
-            # sum all all value of the same year
+            # sum all value of the same year
             for year in year_list:
                 year_sum = data['Value'][data['Year'] == year].sum()
                 value.append(year_sum/(10**3))
@@ -332,7 +332,7 @@ class Visualization:
         Generate the corresponding world map according to the data we have
         This function will directly save the charts as 'distribution.html' in this folder
         param: style --> output of style function
-        ouput: save 'distribution.html' in the same folder
+        output: save 'distribution.html' in the same folder
         '''
         # make sure input style is the right type: pyecharts.Style
         assert isinstance(style, pyecharts.Style)
@@ -348,7 +348,7 @@ class Visualization:
         for j in range(53):
             one_year_con=[]
             health_oyc=[]
-            # caculate value for each country
+            # calculate  value for each country
             for i in countries:
                 ind1=np.intersect1d((np.where(self.df_crops[:,1]==i))[0],
                                     (np.where(self.df_crops[:,3]=='Vegetables'))[0])
@@ -424,7 +424,7 @@ class Visualization:
             ind2=(np.where(temp[:,4]==645))[0]
             composition2[i]=(np.ndarray.flatten(temp[ind2]).tolist()[0][7+51*2])
         
-        # creat variables for pie chart
+        # create  variables for pie chart
         attr=[]
         v1=[]
         for i,j in composition1.items():
