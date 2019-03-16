@@ -44,10 +44,10 @@ class Visualization:
         '''
         df=self.macronutrient
         
-        #labels
+        # labels
         name = ['Animal protein','Plant protein','Fat','Carbohydrates']   
         
-        #divide the circle to uniform part
+        # divide the circle to uniform part
         theta = np.linspace(0,2*np.pi,len(name),endpoint=False)
         
         # mean kilocalories in different macronutrient
@@ -55,7 +55,7 @@ class Visualization:
         theta = np.concatenate((theta,[theta[0]]))
         value = np.concatenate((value,[value[0]]))
         
-        # graph  the plot
+        # graph the plot
         ax = plt.subplot(111,projection = 'polar')      
         ax.plot(theta,value,lw=1,alpha = 0.75,color=self._color)   
         ax.fill(theta,value,color='firebrick',alpha = self._transparency)       
@@ -109,7 +109,7 @@ class Visualization:
         param: files --> list of items you want to plot
         type: list
         '''
-        # make sure 'files' is the correct data type and only contains strings 
+        # make sure 'files' is the correct data type and only contains string 
         assert isinstance(files, list)
         assert all(isinstance(item, str) for item in files)
 
@@ -212,7 +212,7 @@ class Visualization:
         # select useful data
         df = self.food[['Item','Year','Value']]
         
-        # combine data in cereal  and starchy roots
+        # combine data in cereal and starchy roots
         df_cereal = df.loc[df['Item'] == 'Cereals - Excluding Beer']
         df_starchy = df.loc[(df['Item'] == 'Starchy Roots')]
         
@@ -220,10 +220,10 @@ class Visualization:
         df_cereal.index = range(len(df_cereal))
         df_starchy.index = range(len(df_starchy))
 
-        # add value together, creating carb value
+        # add values together, creating carb_value
         carb_value = df_cereal['Value'] + df_starchy['Value']
      
-        # Extract data for plotting: vegetable, fruit, meant, carbs
+        # Extract data for plotting: vegetable, fruit, meat, carbs
         df_veg = df.loc[df['Item'] == 'Vegetables']
         df_meat = df.loc[df['Item'] == 'Meat']
         df_seafood = df.loc[df['Item'] == 'Fish, Seafood']
@@ -237,11 +237,11 @@ class Visualization:
             param: data --> DataFrame you input
             return: list of all values from 1961 to 2013
             '''
-            # create  year list
+            # create year list
             year_list = list(range(1961,2014))
             value = []
             
-            # sum all value of the same year
+            # sum all values of the same year
             for year in year_list:
                 year_sum = data['Value'][data['Year'] == year].sum()
                 value.append(year_sum/(10**3))
@@ -256,7 +256,7 @@ class Visualization:
         
         # compute the value based on start_zero or not
         if start_zero == False:
-            # compute the data, sum all value every year
+            # compute the data, sum all values every year
             veg_value = sum_over_year(df_veg)
             meat_value = sum_over_year(df_meat)
             seafood_value = sum_over_year(df_seafood)
@@ -266,7 +266,7 @@ class Visualization:
             opacity = 1
             condition = 'normal'
         else:
-            # compute the data, sum all value every year. Start at zero
+            # compute the data, sum all value every year. Starts at zero
             veg_value = sum_over_year(df_veg, start_zero)
             meat_value = sum_over_year(df_meat, start_zero)
             seafood_value = sum_over_year(df_seafood, start_zero)
@@ -348,7 +348,7 @@ class Visualization:
         for j in range(53):
             one_year_con=[]
             health_oyc=[]
-            # calculate  value for each country
+            # calculate value for each country
             for i in countries:
                 ind1=np.intersect1d((np.where(self.df_crops[:,1]==i))[0],
                                     (np.where(self.df_crops[:,3]=='Vegetables'))[0])
@@ -424,7 +424,7 @@ class Visualization:
             ind2=(np.where(temp[:,4]==645))[0]
             composition2[i]=(np.ndarray.flatten(temp[ind2]).tolist()[0][7+51*2])
         
-        # create  variables for pie chart
+        # create variables for pie chart
         attr=[]
         v1=[]
         for i,j in composition1.items():
