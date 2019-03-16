@@ -262,7 +262,7 @@ class Visualization:
             seafood_value = sum_over_year(df_seafood)
             fruit_value = sum_over_year(df_fruit)
             carb_value = sum_over_year(df_carb)
-            # set opacity, and spcial condition
+            # set opacity, and special condition
             opacity = 1
             condition = 'normal'
         else:
@@ -286,7 +286,7 @@ class Visualization:
         # set legend and axis
         plt.legend(bbox_to_anchor=(1.04,1), loc="upper left", frameon=False)
         plt.xlabel('Year')
-        plt.ylabel('Consumption (millon tons)')
+        plt.ylabel('Consumption (million tons)')
         plt.grid(alpha=0.5)
         plt.savefig('Global Food Consumption-%s.pdf' %(condition), bbox_inches='tight')
         plt.show()
